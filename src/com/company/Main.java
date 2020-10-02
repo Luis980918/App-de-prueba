@@ -3,21 +3,17 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-        int menu=0;
-        System.out.println("**************************************");
-        System.out.println("************Menú principal************");
-        System.out.println("**************************************");
+        Context context = new Context();
+        Strategy strategy;
 
-        switch(menu){
+        switch (1) {
             case 1:
+                strategy = new StrategyMultiplication();
+                context.setStrategy(strategy);
+                System.out.println(context.execute(2.0, 2.0));
                 break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
+            default:
+                System.err.println("main: error");
         }
     }
 }
